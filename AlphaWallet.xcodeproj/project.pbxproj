@@ -3989,7 +3989,7 @@
 				"${BUILT_PRODUCTS_DIR}/SwiftyXMLParser/SwiftyXMLParser.framework",
 				"${BUILT_PRODUCTS_DIR}/TrezorCrypto/TrezorCrypto.framework",
 				"${BUILT_PRODUCTS_DIR}/TrustKeystore/TrustKeystore.framework",
-				"${BUILT_PRODUCTS_DIR}/TrustWalletCore/TrustWalletCore.framework",
+				"${BUILT_PRODUCTS_DIR}/TrustWalletCore/WalletCore.framework",
 				"${BUILT_PRODUCTS_DIR}/libsodium/libsodium.framework",
 				"${BUILT_PRODUCTS_DIR}/secp256k1_ios/secp256k1_ios.framework",
 				"${BUILT_PRODUCTS_DIR}/web3swift/web3swift.framework",
@@ -4029,7 +4029,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyXMLParser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrezorCrypto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrustKeystore.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TrustWalletCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WalletCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libsodium.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/secp256k1_ios.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/web3swift.framework",
@@ -5027,7 +5027,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -5083,7 +5083,7 @@
 				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = arm64;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -5123,7 +5123,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7  armv7s";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -5163,7 +5163,7 @@
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)-Swift.h ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7  armv7s";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -5184,6 +5184,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlphaWallet.app/AlphaWallet";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -5203,6 +5204,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AlphaWallet.app/AlphaWallet";
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
@@ -5223,6 +5225,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = new;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Trust;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Debug;
 		};
@@ -5242,6 +5245,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = new;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Trust;
+				VALID_ARCHS = "$(ARCHS_STANDARD)";
 			};
 			name = Release;
 		};
