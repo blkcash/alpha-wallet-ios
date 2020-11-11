@@ -686,6 +686,8 @@
 		8769888D24C6ED04002BF62B /* TransactionInProgressCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769888C24C6ED04002BF62B /* TransactionInProgressCoordinator.swift */; };
 		8782035D2431E66600792F12 /* FilterTokensCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782035C2431E66600792F12 /* FilterTokensCoordinator.swift */; };
 		8782035F2431FBC300792F12 /* ShowAddHideTokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782035E2431FBC300792F12 /* ShowAddHideTokensViewModel.swift */; };
+		878EE959255C18AB000210DE /* Oneinch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878EE958255C18AB000210DE /* Oneinch.swift */; };
+		878EE95B255C1952000210DE /* ERC20Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878EE95A255C1952000210DE /* ERC20Token.swift */; };
 		87A3020924BEE243000DF32E /* TransactionInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3020824BEE243000DF32E /* TransactionInProgressViewController.swift */; };
 		87A3020B24BF04B6000DF32E /* TransactionInProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3020A24BF04B6000DF32E /* TransactionInProgressViewModel.swift */; };
 		87A3022224C021F4000DF32E /* ConfirmationTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A3022024C021F3000DF32E /* ConfirmationTransitionController.swift */; };
@@ -1460,6 +1462,8 @@
 		8769888C24C6ED04002BF62B /* TransactionInProgressCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInProgressCoordinator.swift; sourceTree = "<group>"; };
 		8782035C2431E66600792F12 /* FilterTokensCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTokensCoordinator.swift; sourceTree = "<group>"; };
 		8782035E2431FBC300792F12 /* ShowAddHideTokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAddHideTokensViewModel.swift; sourceTree = "<group>"; };
+		878EE958255C18AB000210DE /* Oneinch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oneinch.swift; sourceTree = "<group>"; };
+		878EE95A255C1952000210DE /* ERC20Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERC20Token.swift; sourceTree = "<group>"; };
 		87A3020824BEE243000DF32E /* TransactionInProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInProgressViewController.swift; sourceTree = "<group>"; };
 		87A3020A24BF04B6000DF32E /* TransactionInProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionInProgressViewModel.swift; sourceTree = "<group>"; };
 		87A3022024C021F3000DF32E /* ConfirmationTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationTransitionController.swift; sourceTree = "<group>"; };
@@ -2179,6 +2183,7 @@
 		2977CAF31F7E0C5D009682A0 /* Types */ = {
 			isa = PBXGroup;
 			children = (
+				878EE957255C18A0000210DE /* Oneinch */,
 				294DFBAD1FE6F254004CEB56 /* TokenObject.swift */,
 				29E9CFCE1FE7347200017744 /* ERCToken.swift */,
 				29C0FCE4200EBAF6004A13CB /* TokenType.swift */,
@@ -3598,6 +3603,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		878EE957255C18A0000210DE /* Oneinch */ = {
+			isa = PBXGroup;
+			children = (
+				878EE958255C18AB000210DE /* Oneinch.swift */,
+				878EE95A255C1952000210DE /* ERC20Token.swift */,
+			);
+			path = Oneinch;
+			sourceTree = "<group>";
+		};
 		AA574E612054EC8B00F4B3AF /* Rest */ = {
 			isa = PBXGroup;
 			children = (
@@ -4509,6 +4523,7 @@
 				5E7C7EC725C711F5EA12CB1C /* History.swift in Sources */,
 				5E7C767C9166726E96ED4C07 /* DelegateContract.swift in Sources */,
 				5E7C77D5AD018763345D8DD5 /* CanOpenContractWebPage.swift in Sources */,
+				878EE95B255C1952000210DE /* ERC20Token.swift in Sources */,
 				5E7C7F1B297CE042114EF095 /* LockEnterPasscodeViewController.swift in Sources */,
 				5E7C71DC13B2040F5408BF3C /* ImportMagicTokenCardRowViewModel.swift in Sources */,
 				5E7C77BFA252C7AA63BA5B90 /* TokenCardRowView.swift in Sources */,
@@ -4573,6 +4588,7 @@
 				76F1D3B0E2CDBE82B764C0C7 /* MyDappCell.swift in Sources */,
 				5E7C79E9A6A3DFB7FA680752 /* DappViewCell.swift in Sources */,
 				5E7C77649E432A905B836E95 /* DappViewCellViewModel.swift in Sources */,
+				878EE959255C18AB000210DE /* Oneinch.swift in Sources */,
 				5E7C7A6CC21C553CD4008F14 /* DappButton.swift in Sources */,
 				5E7C7E83AD74AFB0C717EAC0 /* DappsHomeViewControllerHeaderView.swift in Sources */,
 				5E7C72CF145240C816BB12E2 /* DappsHomeViewControllerHeaderViewViewModel.swift in Sources */,
