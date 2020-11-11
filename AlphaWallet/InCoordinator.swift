@@ -98,6 +98,7 @@ class InCoordinator: NSObject, Coordinator {
     let navigationController: UINavigationController
     var coordinators: [Coordinator] = []
     var keystore: Keystore
+    var urlSchemeCoordinator: UrlSchemeCoordinator
     weak var delegate: InCoordinatorDelegate?
     var tabBarController: UITabBarController? {
         return navigationController.viewControllers.first as? UITabBarController
@@ -110,7 +111,8 @@ class InCoordinator: NSObject, Coordinator {
             assetDefinitionStore: AssetDefinitionStore,
             config: Config,
             appTracker: AppTracker = AppTracker(),
-            analyticsCoordinator: AnalyticsCoordinator?
+            analyticsCoordinator: AnalyticsCoordinator?,
+            urlSchemeCoordinator: UrlSchemeCoordinator
     ) {
         self.navigationController = navigationController
         self.wallet = wallet
@@ -119,6 +121,7 @@ class InCoordinator: NSObject, Coordinator {
         self.appTracker = appTracker
         self.analyticsCoordinator = analyticsCoordinator
         self.assetDefinitionStore = assetDefinitionStore
+        self.urlSchemeCoordinator = urlSchemeCoordinator
         //Disabled for now. Refer to function's comment
         //self.assetDefinitionStore.enableFetchXMLForContractInPasteboard()
 
@@ -134,6 +137,8 @@ class InCoordinator: NSObject, Coordinator {
         fetchXMLAssetDefinitions()
         listOfBadTokenScriptFilesChanged(fileNames: assetDefinitionStore.listOfBadTokenScriptFiles + assetDefinitionStore.conflictingTokenScriptFileNames.all)
         setupWatchingTokenScriptFileChangesToFetchEvents()
+
+        urlSchemeCoordinator.processPendingURL(in: self)
     }
 
     func launchUniversalScanner() {
@@ -830,16 +835,24 @@ extension InCoordinator: SettingsCoordinatorDelegate {
     }
 }
 
-extension InCoordinator: TokensCoordinatorDelegate {
-
-    func didPressErc20ExchangeOnUniswap(for holder: UniswapHolder, in coordinator: TokensCoordinator) {
-        guard let dappBrowserCoordinator = dappBrowserCoordinator, let url = holder.url else { return }
-
-        coordinator.navigationController.popViewController(animated: false)
+extension InCoordinator: UrlSchemeResolver {
+    func openURLInBrowser(url: URL) {
+        guard let dappBrowserCoordinator = dappBrowserCoordinator else { return }
 
         showTab(.browser)
 
         dappBrowserCoordinator.open(url: url, animated: true, forceReload: true)
+    }
+}
+
+extension InCoordinator: TokensCoordinatorDelegate {
+
+    func didPressErc20ExchangeOnUniswap(for holder: UniswapHolder, in coordinator: TokensCoordinator) {
+        guard let url = holder.url else { return }
+
+        coordinator.navigationController.popViewController(animated: false)
+
+        openURLInBrowser(url: url)
     }
 
     func didPress(for type: PaymentFlow, server: RPCServer, in coordinator: TokensCoordinator) {
